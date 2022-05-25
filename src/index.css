@@ -22,7 +22,7 @@ code {
 
 body::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #1a1a1a;
+  background-color: #303A52;
 }
 
 body::-webkit-scrollbar {
@@ -32,7 +32,11 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #4b2d19;
+}
+
+.icon path{
+  stroke: white;
+
 }
 
 :root,
@@ -46,7 +50,8 @@ body {
   font-family: "Kaisei Decol", serif;
 
   color: #fff;
-  background-color: #1a1a1a;
+  /* background-color: rgba(12,10,29,1.0); */
+  background-color: #07050f;
 
 
   --dark-navy: #020c1b;

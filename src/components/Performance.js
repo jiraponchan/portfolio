@@ -223,7 +223,24 @@ const Img = styled.div`
     vertical-align: middle;
     position: relative;
     z-index: 1;
+    opacity: 0.25;
+    filter: grayscale(50%) contrast(1) brightness(70%);
     
+    
+  }
+  & > img:hover{
+    opacity: 1;  
+    filter:none;
+   transition: 0.25s all ease-in;
+   transform: scale(1.02);
+
+   
+  }
+  & > img:not(hover){
+    
+   transition: 0.25s all ease-out;
+   
+   
   }
 `;
 

@@ -1,7 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+import { GrClose, GrMenu } from "react-icons/gr";
+import { useState } from "react";
+
 export const NavbarElement = () => {
+  const [click, setClick] = useState(false);
+
+  const ChangClick = () => {
+    setClick(!click);
+    console.log(click);
+  };
   return (
     <NavBar id="navbar">
       <Logo>
@@ -9,22 +18,33 @@ export const NavbarElement = () => {
           <h1>JC</h1>
         </a>
       </Logo>
-      <Menu>
+      <Menu click={click}>
         <ul>
           <li>
-            <a href="#jirapon">Home</a>
+            <a href="#jirapon" onClick={() => ChangClick()}>
+              HOME
+            </a>
           </li>
           <li>
-            <a href="#about">About Me</a>
+            <a href="#about" onClick={() => ChangClick()}>
+              ABOUT
+            </a>
           </li>
           <li>
-            <a href="#education">Education</a>
+            <a href="#education" onClick={() => ChangClick()}>
+              EDUCATION
+            </a>
           </li>
           <li>
-            <a href="#perform">Performance</a>
+            <a href="#perform" onClick={() => ChangClick()}>
+              WORK
+            </a>
           </li>
         </ul>
       </Menu>
+      <MenuMoblid onClick={() => ChangClick()}>
+        {click ? <GrClose className="icon"   /> : <GrMenu className="icon"  />}
+      </MenuMoblid>
     </NavBar>
   );
 };
@@ -57,15 +77,30 @@ const Logo = styled.div`
 `;
 
 const Menu = styled.div`
-  & ul {
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    top: 70px;
+    right: ${({ click }) => (click ? 0 : "-100%")};
+    flex-direction: column;
+    transition: 0.5s all ease-in;
+    background-color: #ca4;
+
+    /* ${({ click }) => (click ? 0 : "-100%")} */
+  }
+  & > ul {
     list-style: none;
 
     & li {
       display: inline-block;
+      @media screen and (max-width: 768px) {
+        padding: 25px;
+      }
     }
     & li:hover {
       a {
-        color: red;
+        color: green;
       }
     }
     & a {
@@ -74,10 +109,38 @@ const Menu = styled.div`
       color: white;
       font-size: 1em;
     }
+    @media screen and (max-width: 768px) {
+      /* display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction: column;
+      width: 60%;
+      height: 100vh;
+      position: absolute;
+      top: 70px;
+      right: 0%;
+      transform: 0.5s all ease-in;
+      background-color: red; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+    }
   }
-  @media screen and (min-width: 1920px) {
-  }
+
   border: 1px solid #1a25;
+`;
+
+const MenuMoblid = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    font-size:1.5rem;
+
+    /* how to fix color *** in index.css .incon add path and stoke */
+  }
 `;
 
 export default NavbarElement;
