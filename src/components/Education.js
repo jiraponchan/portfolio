@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const Education = () => {
   return (
-    <Container>
-      <Heading>
+    <Container id="education">
+      <Heading >
         <h2>Education</h2>
       </Heading>
       <Inner>
@@ -46,10 +46,14 @@ export const Education = () => {
 };
 
 const Container = styled.div`
+
   max-width: 700px;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  justify-content:center;
   margin: 0 auto;
   padding: 100px 0px;
-
   border: 1px solid #12a;
 `;
 

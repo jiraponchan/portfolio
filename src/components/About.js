@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const About = () => {
   return (
-    <Contain>
+    <Contain id="about">
       <Heading>
         <h2>About Me</h2>
       </Heading>
@@ -32,7 +32,9 @@ const About = () => {
             <li>worldpress</li>
           </ul>
         </Para>
-        <Mypic>รูป</Mypic>
+        <Mypic>
+          <img src="./images/me.jpg" alt="" />
+        </Mypic>
       </Inner>
     </Contain>
   );
@@ -80,10 +82,14 @@ const Inner = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   border: 1px solid #d488;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 const Para = styled.div`
   display: block;
   border: 1px solid #45a4;
+  padding-right: 10px;
   & p {
     margin: 0px 0px 15px;
   }
@@ -112,6 +118,24 @@ const Para = styled.div`
 `;
 const Mypic = styled.div`
   border: 1px solid #4ab;
+  max-width: 300px;
+
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  transition: var(--transition);
+  display: block;
+  position: relative;
+
+  width: 100%;
+  border-radius: var(--border-radius);
+  & img {
+    max-width: 300px;
+    object-fit: contain;
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    padding: 25px 0px 0px 0px;
+    
+  }
 `;
 
 export default About;

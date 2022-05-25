@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Performance = () => {
   return (
-    <Container>
+    <Container id="perform">
       <Heading>
         <h2>Performance</h2>
       </Heading>
@@ -35,7 +35,7 @@ export const Performance = () => {
               </Socail>
             </Details>
             <Img>
-              <a href="/">รูป</a>
+              <img src="./images/pic.jpg" alt="pic" />
             </Img>
           </li>
         </ul>
@@ -48,8 +48,15 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 100px 0px;
   max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 
   border: 1px solid #b22a;
+  @media (max-width: 768px) {
+    padding: 80px 0px;
+  }
 `;
 
 const Heading = styled.div`
@@ -101,6 +108,8 @@ const Details = styled.div`
   grid-area: 1 / 1 / -1 / 7;
   grid-column: 7 / -1;
   text-align: right;
+  z-index: 2;
+
   & p > {
     margin: 10px 0px;
     color: var(--green);
@@ -126,6 +135,10 @@ const Details = styled.div`
     font-size: var(--fz-lg);
     & > p {
       margin: 0px;
+     
+    }
+    @media (max-width: 768px) {
+      padding:0;
     }
   }
   & ul {
@@ -140,7 +153,24 @@ const Details = styled.div`
     & > li {
       margin: 0px 0px 5px 20px;
       white-space: nowrap;
+      @media (max-width: 768px) {
+        margin: 0px 0px 5px 10px;
+        justify-content: flex-start;
+      }
     }
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  
+  }
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+    padding: 40px 40px 30px;
+    text-align: left;
+  }
+  @media (max-width: 480px) {
+    padding: 0px;
+    justify-content: flex-start;
   }
 `;
 
@@ -164,6 +194,10 @@ const Socail = styled.section`
     align-items: center;
     padding: 10px;
   }
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    
+  }
 `;
 
 const Img = styled.div`
@@ -174,7 +208,14 @@ const Img = styled.div`
   position: relative;
   z-index: 1;
   grid-column: 1 / 8;
-  & > a {
+  @media (max-width: 768px) {
+    
+    opacity: 0.25;
+    grid-column: 1 / -1;
+    filter: grayscale(100%) contrast(1) brightness(50%);
+  }
+
+  & > img {
     width: 100%;
     height: 100%;
     background-color: var(--green);
@@ -182,6 +223,7 @@ const Img = styled.div`
     vertical-align: middle;
     position: relative;
     z-index: 1;
+    
   }
 `;
 

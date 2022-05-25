@@ -32,6 +32,7 @@ const Contain = styled.div`
   left: auto;
   right: 40px;
   z-index: 10;
+
 `;
 
 const MainSide = styled.div`
@@ -48,6 +49,14 @@ const MainSide = styled.div`
     margin: 0px auto;
     background-color: white;
   }
+  @media (max-width: 1080px){
+    left: 20px;
+    right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  display:none;
+}
 `;
 
 const Side = styled.div`
@@ -63,6 +72,7 @@ const Side = styled.div`
     position: relative;
     transition: var(--transition);
   }
+ 
 `;
 
 const MainSoc = styled.div`
@@ -104,6 +114,13 @@ const MainSoc = styled.div`
       margin-bottom: 20px;
     }
   }
+  @media (max-width: 1080px){
+    left: 20px;
+    right: auto;
+}
+@media screen and (max-width: 768px) {
+  display:none;
+}
 `;
 
 export default SideBar;

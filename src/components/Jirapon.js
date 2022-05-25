@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 function Jirapon() {
   return (
-    <Contain>
+    <Contain id="jirapon">
       <h1>Hi, my name is </h1>
       <h2>Jirapon Chan</h2>
       <h3>I Build thing for web</h3>
@@ -20,24 +20,30 @@ function Jirapon() {
 
 const Contain = styled.section`
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
-  border: 1px solid purple;
-  max-width: 1000px;
+  -webkit-box-align: center;
   flex-direction: column;
-  margin: 0px auto;
+  align-items: flex-start;
   min-height: 100vh;
-  & h2, h3 {
-    font-size:5em;
-    margin:5px;
+  padding: 0px;
+
+  margin: 0px auto;
+  padding: 100px 0px;
+  max-width: 1000px;
+
+  & h2,
+  h3 {
+    margin: 5px;
+    font-size: clamp(40px, 8vw, 80px);
   }
-  & h1{
-    font-size:1em;  
+  & h1 {
+    font-size: 1em;
+    font-size: clamp(14px, 5vw, 16px);
   }
   & p {
-    max-width:640px;
+    max-width: 540px;
   }
- 
 `;
-
 
 export default Jirapon;
