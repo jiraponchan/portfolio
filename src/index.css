@@ -36,7 +36,11 @@ body::-webkit-scrollbar-thumb {
 
 .icon path{
   stroke: white;
-
+}
+.icon2 path{
+  stroke: white;
+  size: 2rem;
+ 
 }
 
 :root,
@@ -118,6 +122,3 @@ small {
   
 }
 
-:root{
-  
-}

@@ -6,6 +6,7 @@ import About from "./components/About";
 import NavbarElement from "./components/Navbar.js/NavbarElement";
 import Education from "./components/Education";
 import Performance from "./components/Performance";
+import Intern from "./components/Intern";
 
 import { createGlobalStyle } from "styled-components";
 
@@ -21,6 +22,7 @@ function App() {
           <About />
           <Education />
           <Performance />
+          <Intern />
           {/* </Main> */}
         </WrapMain>
       </Contain>
@@ -44,7 +46,7 @@ const WrapMain = styled.div`
   min-height: 100vh;
   margin: 0 auto;
 
-  border: 1px solid yellow;
+
   @media screen and (max-width: 1080px) {
     padding: 0px 100px;
   }

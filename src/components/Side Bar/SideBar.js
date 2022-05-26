@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FaGithub, FaFacebook,FaInstagram } from "react-icons/fa";
 
 function SideBar() {
   return (
@@ -11,13 +12,13 @@ function SideBar() {
       <MainSoc>
         <ul>
           <li>
-            <a href="/">FA</a>
+            <a href="https://www.facebook.com/jiraponchan/" target='_blank'><FaFacebook size='1.5rem'/></a>
           </li>
           <li>
-            <a href="/">IG</a>
+            <a href="https://www.instagram.com/05.11_pm_/" target="_blank"><FaInstagram size='1.5rem' /></a>
           </li>
           <li>
-            <a href="/">GH</a>
+            <a href="/"><FaGithub size='1.5rem' /></a>
           </li>
         </ul>
       </MainSoc>
@@ -112,6 +113,12 @@ const MainSoc = styled.div`
     }
     & li:last-of-type {
       margin-bottom: 20px;
+    }
+    & a:hover{
+      transform: scale(1.2);
+      transition: 0.2s all ease-in;
+      
+      
     }
   }
   @media (max-width: 1080px){

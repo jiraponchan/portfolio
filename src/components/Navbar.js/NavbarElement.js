@@ -40,10 +40,15 @@ export const NavbarElement = () => {
               WORK
             </a>
           </li>
+          <li>
+            <a href="#intern" onClick={() => ChangClick()}>
+              INTERNSHIP
+            </a>
+          </li>
         </ul>
       </Menu>
       <MenuMoblid onClick={() => ChangClick()}>
-        {click ? <GrClose className="icon"   /> : <GrMenu className="icon"  />}
+        {click ? <GrClose className="icon" /> : <GrMenu className="icon" />}
       </MenuMoblid>
     </NavBar>
   );
@@ -61,13 +66,15 @@ const NavBar = styled.div`
   padding: 0px 50px;
   width: 100%;
   height: 70px;
-  background-color: rgba(10, 25, 47, 0.85);
+  /* background-color: rgba(10, 25, 47, 0.85); */
+  background-color: rgb(12, 10, 29);
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px -10px rgba(10, 25, 47, 0.85);
   transition: var(--transition);
 `;
 
 const Logo = styled.div`
-  border: 1px solid #a125;
+  /* border: 1px solid #a125; */
   font-size: 30px;
   border-radius: 15px;
   a {
@@ -82,10 +89,12 @@ const Menu = styled.div`
     height: 100vh;
     position: absolute;
     top: 70px;
-    right: ${({ click }) => (click ? 0 : "-100%")};
+    right: ${({ click }) => (click ? 0 : "-110%")};
     flex-direction: column;
     transition: 0.5s all ease-in;
-    background-color: #ca4;
+    background-color: rgb(12, 10, 29);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 10px 30px -10px rgba(10, 25, 47, 0.85);
 
     /* ${({ click }) => (click ? 0 : "-100%")} */
   }
@@ -98,16 +107,17 @@ const Menu = styled.div`
         padding: 25px;
       }
     }
-    & li:hover {
-      a {
-        color: green;
-      }
+    & a:hover {
+      text-shadow: 0 0 10px rgb(192 219 255 / 75%),
+        0 0 100px rgb(65 120 255 / 54%);
+      transition: var(--transition);
     }
     & a {
       padding: 15px;
       text-decoration: none;
       color: white;
       font-size: 1em;
+      text-shadow: rgba(0,255,200,0.89) 0px 0px 88px;
     }
     @media screen and (max-width: 768px) {
       /* display:flex;
@@ -128,8 +138,6 @@ const Menu = styled.div`
       height: 100vh;
     }
   }
-
-  border: 1px solid #1a25;
 `;
 
 const MenuMoblid = styled.div`
@@ -137,7 +145,7 @@ const MenuMoblid = styled.div`
 
   @media screen and (max-width: 768px) {
     display: flex;
-    font-size:1.5rem;
+    font-size: 1.5rem;
 
     /* how to fix color *** in index.css .incon add path and stoke */
   }
